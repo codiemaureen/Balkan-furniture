@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Balkan Furniture Store",
+  title: "Balkan Furniture",
   description: "",
 };
 
