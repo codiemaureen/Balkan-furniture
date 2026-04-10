@@ -1,27 +1,29 @@
+import Image from "next/image";
+import FurnitureGallery from "../components/gallery";
+
 export default function Home() {
-  const featured = [
-    {
-      name: "Modern Sectional",
-      desc: "Comfort-first seating with a clean silhouette for everyday living.",
-      price: "$1,299+",
-      image:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      name: "Dining Collection",
-      desc: "Warm wood finishes and durable seating for family gatherings.",
-      price: "$899+",
-      image:
-        "https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      name: "Bedroom Sets",
-      desc: "Simple, polished pieces designed to make your space feel complete.",
-      price: "$1,499+",
-      image:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-    },
-  ];
+const featured = [
+  {   name: "Bedroom Sets",
+    desc: "Comfort-first seating with a clean silhouette for everyday living.",
+    price: "$1,299+",
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2000&q=90",
+  },
+  {
+    name: "Dining Collection",
+    desc: "Warm wood finishes and durable seating for family gatherings.",
+    price: "$899+",
+    image:
+      "https://images.unsplash.com/photo-1758977403403-c51ef509e788??auto=format&fit=crop&w=2000&q=90",
+  },
+  {
+    name: "Living Room Sets",
+    desc: "Simple, polished pieces designed to make your space feel complete.",
+    price: "$1,499+",
+    image:
+      "https://images.unsplash.com/photo-1680503397671-caa25818d36f?auto=format&fit=crop&w=2000&q=90",
+  },
+];
 
   const benefits = [
     "Quality furniture for every room",
@@ -87,7 +89,9 @@ export default function Home() {
           <div className="absolute -left-4 -top-4 hidden h-24 w-24 rounded-3xl bg-stone-200 md:block" />
           <div className="absolute -bottom-4 -right-4 hidden h-32 w-32 rounded-3xl bg-amber-100 md:block" />
           <div className="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-xl">
-            <img
+            <Image
+              width={100}
+              height={100}
               src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80"
               alt="Elegant furniture showroom"
               className="h-[520px] w-full object-cover"
@@ -96,16 +100,15 @@ export default function Home() {
         </div>
       </section>
 
+      <FurnitureGallery featured={featured} />
+      
+
       <section id="shop" className="mx-auto max-w-7xl px-6 py-8 md:py-12">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <p className="text-sm uppercase tracking-[0.2em] text-stone-500">Featured</p>
             <h2 className="mt-2 text-3xl font-semibold">Popular categories</h2>
           </div>
-          <p className="max-w-md text-sm leading-6 text-stone-500">
-            A homepage layout designed to highlight the store’s best sellers and make it easy
-            for customers to explore by room.
-          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -114,7 +117,8 @@ export default function Home() {
               key={idx}
               className="overflow-hidden rounded-[1.75rem] border border-stone-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <img src={item.image} alt={item.name} className="h-64 w-full object-cover" />
+              <Image src={item.image} alt={item.name} className="h-64 w-full object-cover" width={100}
+              height={100}/>
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold">{item.name}</h3>
